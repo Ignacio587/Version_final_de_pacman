@@ -1,7 +1,5 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 
 #include <ctype.h>
 #include <time.h>
@@ -88,11 +86,11 @@ void ImprimirMatriz(int** matriz, int nFilas, int nColumnas)
 	printf("\n");
 	}
 }
-void ImprimirInfo(int puntaje, int tiempo, int vidas)
+void ImprimirInfo(int puntaje, int tiempo, int vidas, int niveles)
 {
     printf("\n");
     printf("====================  P A C M A N   ====================\n\n");    // Pᗣᗧ•••MᗣN
-    printf("     Puntaje: %d       Tiempo: %d       Vidas: %d\n\n", puntaje, tiempo, vidas);
+    printf("     Puntaje: %d       Tiempo: %d       Vidas: %d nivel: %d\n\n", puntaje, tiempo, vidas,niveles);
 }
 
 // Imprimir pantalla final y puntaje obtenido
