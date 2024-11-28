@@ -6,5 +6,7 @@ int** CrearMatriz(int nFilas, int nColumnas);
 void RecibirMapa(const char* filename, int** matriz, int nFilas, int nColumnas);
 void ActualizarMapa(const char* filename, int** matriz, int nFilas, int nColumnas);
 void LiberarMatriz(int** matriz, int nFilas);
+void RecibirPosiciones(char posicionesTxt[], int** matrizActual);
+void EscogerMapa(char mapa[], char posiciones[]);
 
 #endif
