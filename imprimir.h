@@ -6,7 +6,7 @@
 void ImprimirMatriz(int** matriz, int nFilas, int nColumnas);
 
 // Imprime la información de juego (puntaje, tiempo y vidas restantes).
-void ImprimirInfo(int puntaje, int tiempo, int vidas);
+void ImprimirInfo(int puntaje, int tiempo, int vidas, int niveles);
 
 // Imprime Gameover y el puntaje logrado cuando se terminar el juego.
 void ImprimirGameOver(int puntaje);
