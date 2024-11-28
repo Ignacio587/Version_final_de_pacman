@@ -18,11 +18,11 @@
 // Colores
 
 // Vidas
-int vidas = 2;
+int vidas = 3;
 
 // Para comprobar si hay puntos en los fantasmas
 int encimaBLYNKY=0, encimaPINKY=0, encimaINKY=0, encimaCLYDE=0;
-int encimabarreraBLYNKY = 0, encimaBarreraPINKY = 0, encimabarreraINKY=0, encimaencimaINKY=0, encimaCLYDE=0;
+int encimabarreraBLYNKY = 0, encimaBarreraPINKY = 0, encimabarreraINKY=0, encimaencimaINKY=0, encimabarreraCLYDE=0;
 
 
 // Configurar terminal en modo raw (capturar teclas sin Enter)
