@@ -68,7 +68,22 @@ void LimpiarPacmanFantasmas(int** matriz, int nFilas,int nColumnas)
 }
 
 // Mover a Pac-Man en la matriz
-
+int contapuntos(int **matriz, int nFilas, int nColumnas){
+    int puntajemax;
+    for (int i = 0; i < nFilas; i++)
+    {
+        for (int j = 0; j < nColumnas; j++)
+        {
+            if(matriz[i][j]==PUNTO){
+                puntajemax+=10;
+            }else if(matriz[i][j]==PUNTO_GRANDE){
+                puntajemax+=50;
+            }
+        }
+        return puntajemax;
+    }
+    
+}
 
 // Buscar la posición de los fantasmas
 
@@ -85,6 +100,7 @@ void LimpiarPacmanFantasmas(int** matriz, int nFilas,int nColumnas)
 int main() {
     // Tamaño de la matriz
     int nFilas = 31, nColumnas = 28;
+    int niveles=1;
 
     // Escoger un mapa
     char mapa[32], posiciones[32];
@@ -94,7 +110,7 @@ int main() {
     // Crear matriz e inicializar con mapa inicial
     int** matrizPrincipal = CrearMatriz(nFilas, nColumnas);
     RecibirMapa(mapa, matrizPrincipal, nFilas, nColumnas);
-
+    int puntajemax= contapuntos(matrizPrincipal,nFilas,nColumnas);
     // Posición inicial Pacman y fantasmas
     RecibirPosiciones(posiciones, matrizPrincipal);
 
@@ -125,7 +141,7 @@ int main() {
   
         printf("\033[H\033[J"); // Limpiar pantalla LINUX
         // system("cls"); // Limpiar pantalla WINDOWS
-        ImprimirInfo(puntaje, tiempo, vidas);
+        ImprimirInfo(puntaje, tiempo, vidas, niveles);
         ImprimirMatriz(matrizPrincipal, nFilas, nColumnas);
         printf("\n-- Utilice WASD para moverse y Q para cerrar el juego --\n");
 
@@ -172,9 +188,6 @@ int main() {
             case 'd': direccion = RIGHT; break;
             case 'q': running = false; break; // Salir del juego
             }
-        
-        
-    
 
 
         if (direccion) {
@@ -195,6 +208,14 @@ int main() {
             if(vidas==0){
                 ImprimirGameOver(puntaje);
             }
+        }
+        if(puntaje>=puntajemax){
+             LimpiarPacmanFantasmas(matrizPrincipal,nFilas,nColumnas);
+             RecibirMapa(mapa, matrizPrincipal, nFilas, nColumnas);
+             RecibirPosiciones(posiciones, matrizPrincipal);
+             puntajemax+=puntajemax + 1;
+             system("clear");
+             niveles++;
         }
     }
     getchar(); 
