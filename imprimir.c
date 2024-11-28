@@ -1,6 +1,6 @@
+// imprimir.c
 #include <stdio.h>
 #include <stdlib.h>
-
 #include <ctype.h>
 #include <time.h>
 #include <locale.h>
@@ -8,8 +8,8 @@
 #include <sys/select.h> // Biblioteca para movimiento continuo.
 #include <termios.h>
 #include <unistd.h>
-// Colores
 
+// Colores
 #define YELLOW "\x1B[33m"
 #define BLUE   "\x1b[34m"
 #define MAGENTA "\x1B[35m"
@@ -19,13 +19,7 @@
 #define ORANGE  "\x1B[38;2;255;128;0m"
 #define RESET "\033[0m"
 
-// Constantes
-
-// Movimiento
-#define UP 1
-#define LEFT 2
-#define DOWN 3
-#define RIGHT 4
+// Todas las Constantes
 
 // Estados de la matriz
 #define PARED -1
@@ -41,6 +35,8 @@
 #define PINKY 52	// Rosado
 #define INKY 53		// Celeste
 #define CLYDE 54	// Naranja
+
+// Recorre la matriz principal e imprime la matriz de juego con su ascii designado y utilizando los colores definidos.
 void ImprimirMatriz(int** matriz, int nFilas, int nColumnas)
 {
 	for(int i=0; i<nFilas; i++)
@@ -86,6 +82,9 @@ void ImprimirMatriz(int** matriz, int nFilas, int nColumnas)
 	printf("\n");
 	}
 }
+
+
+// Imprime la información de juego (puntaje, tiempo, vidas y niveles).
 void ImprimirInfo(int puntaje, int tiempo, int vidas, int niveles)
 {
     printf("\n");
