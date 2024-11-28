@@ -110,7 +110,7 @@ int main() {
     // Crear matriz e inicializar con mapa inicial
     int** matrizPrincipal = CrearMatriz(nFilas, nColumnas);
     RecibirMapa(mapa, matrizPrincipal, nFilas, nColumnas);
-    int puntajemax= contapuntos(matrizPrincipal,nFilas,nColumnas);
+    
     // Posición inicial Pacman y fantasmas
     RecibirPosiciones(posiciones, matrizPrincipal);
 
@@ -130,7 +130,7 @@ int main() {
 
     // Configura el tiempo de espera en milisegundos (por ejemplo, 500 ms)
     int timeout_ms = 500;
-
+    int puntajemax= contapuntos(matrizPrincipal,nFilas,nColumnas);
     // Ciclo principal del juego
     int running = true;
     while (vidas>0)
